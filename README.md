@@ -5,7 +5,7 @@ Finds motifs in a fasta file and generates a bed file with the motifs location.
 
 git clone repository 
 ```
-git clone git@github.com:ChildrensMedicalResearchInstitute/Motif2Bed.git
+git clone https://github.com/ChildrensMedicalResearchInstitute/Motif2Bed.git
 cd Motif2Bed
 ```
 
@@ -20,7 +20,7 @@ sudo pip3 install biopython pandas
 ## Installation
 Installation can be done with the following command:
 ```
-sudo python3 ./setup install 
+sudo python3 ./setup.py install 
 ```
 
 ## Usage
