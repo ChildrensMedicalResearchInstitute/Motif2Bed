@@ -70,8 +70,9 @@ if __name__ == "__main__":
             for m in motif_list:
                 len_m=len(m)
                 with open(args.input, 'r') as input_file:
-                    index=0
-                    for i, item in enumerate(SeqIO.parse(input_file, 'fasta')):
+                    for j, item in enumerate(SeqIO.parse(input_file, 'fasta')):
+                        logging.debug("Processing contig: %s"%item.name)
+                        index = 0
                         seq = str(item.seq).upper()
                         len_seq = len(seq)
                         while index < len_seq:

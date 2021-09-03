@@ -30,7 +30,7 @@ It requires an input file in fasta format, output file name and list of motifs.
 
 Example:
 ```
-./motif2bed.py -i input.fa -o motifs.bed -m TTAGGG TCAGGG TTTTTAAAGGGGCC
+motif2bed.py -i input.fa -o motifs.bed -m TTAGGG TCAGGG TTTTTAAAGGGGCC
 ```
 To see the full set of options run the script with -h flag:
 ```
