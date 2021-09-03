@@ -13,6 +13,10 @@ git clone repository
 
 This script needs Python 3, pandas and biopython.
 
+```
+sudo pip3 install biopython pandas
+```
+
 ## Installation
 Installation can be done with the following command:
 ```
