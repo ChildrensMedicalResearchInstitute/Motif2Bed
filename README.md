@@ -5,8 +5,8 @@ Finds motifs in a fasta file and generates a bed file with the motifs location.
 
 git clone repository 
 ```
-> git clone git@github.com:ChildrensMedicalResearchInstitute/Motif2Bed.git
-> cd Motif2Bed
+git clone git@github.com:ChildrensMedicalResearchInstitute/Motif2Bed.git
+cd Motif2Bed
 ```
 
 ### Prerequisites
@@ -20,7 +20,7 @@ sudo pip3 install biopython pandas
 ## Installation
 Installation can be done with the following command:
 ```
-> sudo python3 ./setup install 
+sudo python3 ./setup install 
 ```
 
 ## Usage
@@ -30,11 +30,11 @@ It requires an input file in fasta format, output file name and list of motifs.
 
 Example:
 ```
-$ ./motif2bed.py -i input.fa -o motifs.bed -m TTAGGG TCAGGG TTTTTAAAGGGGCC
+./motif2bed.py -i input.fa -o motifs.bed -m TTAGGG TCAGGG TTTTTAAAGGGGCC
 ```
 To see the full set of options run the script with -h flag:
 ```
-$motif2bed.py -h
+motif2bed.py -h
 usage: motif2bed.py [-h] [-s] [-d] -i INPUT -o OUTPUT -m MOTIFS [MOTIFS ...]
 
 Generates a bed file with motifs extracted from a fasta file.

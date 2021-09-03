@@ -16,6 +16,7 @@ import time
 
 import pandas as pd
 from Bio import SeqIO
+from Bio.Seq import Seq
 
 from pycmri.utils import *
 
@@ -33,6 +34,7 @@ if __name__ == "__main__":
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-s', '--silent', action='store_true', help='Starts in silent mode, no message will be output.')
     parser.add_argument('-d', '--debug', action='store_true', help='Shows debug info')
+    parser.add_argument('-r', '--reverse', action='store_true', help='Find reverse complement motifs as well.')
     parser.add_argument('-i', '--input', type=str, help='Input fasta file', default="input.fa", required=True)
     parser.add_argument('-o', '--output', type=str, help='Output bed file', default="output.bed", required=True)
     parser.add_argument('-m', '--motifs', type=str, nargs='+', help='List of motifs', required=True)
@@ -54,12 +56,18 @@ if __name__ == "__main__":
 
     logging.info("Input file: %s" % (args.input))
     logging.info("Output file: %s" % (args.output))
-    logging.info("Motifs: %s" % (",".join(args.motifs)))
     count = 0
+    motif_list=list()
+    for m in args.motifs:
+        motif_list.append(m)
+        if args.reverse:
+            motif_list.append(str(Seq(m).reverse_complement()))
+    logging.info("Motifs: %s" % (",".join(motif_list)))
+
 
     if file_exists(args.input, must_exist=True):
         with open(args.output, 'w') as output_file:
-            for m in args.motifs:
+            for m in motif_list:
                 len_m=len(m)
                 with open(args.input, 'r') as input_file:
                     index=0
