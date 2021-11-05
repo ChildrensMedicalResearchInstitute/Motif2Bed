@@ -132,7 +132,7 @@ First release September 2021
 ## Credits
 
 Author(s): Pablo Galaviz and Nader Aryamanesh        
-Email:  pgalaviz@cmri.org.au 
+Email:  cmri-bioinformatics@cmri.org.au 
 
 
 **Children’s Medical Research Institute, finding cures for childhood genetic diseases**  
